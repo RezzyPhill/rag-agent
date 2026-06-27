@@ -5,6 +5,6 @@ __pycache__/
 *.pyc
 *.pyo
 .vscode/
-.idea/# OS
+.idea/
 .DS_Store
 Thumbs.db
