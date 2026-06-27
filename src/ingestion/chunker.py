@@ -1,8 +1,7 @@
 import re
 from dataclasses import dataclass, field
 
-# Expanding acronyms before embedding ensures semantic search finds chunks
-# that use the abbreviated form when a user queries the full term.
+
 ACRONYM_MAP = {
     "DoD": "Department of Defense",
     "MBSE": "Model-Based Systems Engineering",
