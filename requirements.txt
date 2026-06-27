@@ -1,0 +1,10 @@
+anthropic
+chromadb
+sentence-transformers
+rank-bm25
+fastapi
+uvicorn[standard]
+pydantic
+structlog
+python-dotenv
+pypdf
