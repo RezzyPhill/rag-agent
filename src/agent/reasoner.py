@@ -80,6 +80,11 @@ class Reasoner:
     # Parses Claude's JSON response into the three return values.
     # Falls back to confidence=0.0 + original-question pass through 
     def _parse_response(self, raw: str) -> tuple[float, str, list[dict]]:
+        # claude JSON strip 
+        raw = raw.strip()
+        if raw.startswith("```"):
+            raw = raw.split("```")[1].lstrip("json").strip()
+
         try:
             data = json.loads(raw)
             confidence = float(data["confidence"])

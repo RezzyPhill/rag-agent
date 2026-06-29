@@ -80,6 +80,11 @@ class Answerer:
     # Parse claude's JSON response 
     # Falls back to "insufficient information" answer 
     def _parse_response(self, raw: str) -> dict:
+        # claude JSON strip 
+        raw = raw.strip()
+        if raw.startswith("```"):
+            raw = raw.split("```")[1].lstrip("json").strip()
+
         try:
             data = json.loads(raw)
             return {

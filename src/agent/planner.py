@@ -51,6 +51,11 @@ class Planner:
         # Extract raw text from claude response
         raw = response.content[0].text
 
+        # claude JSON strip 
+        raw = raw.strip()
+        if raw.startswith("```"):
+            raw = raw.split("```")[1].lstrip("json").strip()
+
         # Parse JSON, fall back to treating the whole question as a single parallel sub-query
         try:
             plan = json.loads(raw)
