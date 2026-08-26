@@ -1,4 +1,5 @@
 anthropic
+mcp
 chromadb
 sentence-transformers
 rank-bm25
