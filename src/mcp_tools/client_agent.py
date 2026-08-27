@@ -87,6 +87,7 @@ async def run(question: str) -> str:
                         if block.type != "tool_use":
                             continue
 
+                        print(f"[tool_call] {block.name}({block.input}) -- via MCP", file=sys.stderr)
                         result = await session.call_tool(block.name, block.input)
                         tool_results.append({
                             "type": "tool_result",
